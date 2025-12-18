@@ -1,3 +1,4 @@
+from stats import get_num_words
 def get_book_text(fpath):
     with open(fpath) as f:
         file_contents = f.read()
@@ -5,8 +6,7 @@ def get_book_text(fpath):
 
 def main():
     words = get_book_text("books/frankenstein.txt")
-    words_array = words.split()
-    word_count = len(words_array)
+    word_count = get_num_words(words)
     
     print(f"Found {word_count} total words")
 
